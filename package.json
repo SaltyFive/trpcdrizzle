@@ -17,6 +17,7 @@
     "@trpc/client": "^11.7.2",
     "@trpc/server": "^11.7.2",
     "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
     "nuxt": "^4.2.2",
     "trpc-nuxt": "^1.2.0",
@@ -25,7 +26,6 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^3.0.0",
     "drizzle-kit": "^0.31.8",
     "tailwindcss": "^4.1.18"
   }

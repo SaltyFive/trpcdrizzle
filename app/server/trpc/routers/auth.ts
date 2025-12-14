@@ -1,3 +1,4 @@
+// 结合drizzle，写一个trpc的登录注册的路由。
 import { z } from 'zod'
 import { publicProcedure, router } from '../trpc'
 import { db } from '../../db'
