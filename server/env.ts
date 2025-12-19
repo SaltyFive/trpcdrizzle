@@ -7,6 +7,7 @@ dotenv.config();
 dotenv.config({ path: '.env', override: true });
 const envSchema = z.object({
     DB_FILE_NAME: z.string(),
+    DATABASE_URL: z.url(),
 });
 
 const envParse = envSchema.safeParse(process.env);
