@@ -1,5 +1,4 @@
 {
-  "$schema": "https://www.schemastore.org/jsconfig",
   "name": "trpcdrizzle",
   "type": "module",
   "private": true,
@@ -9,9 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "db:push": "pnpx drizzle-kit push",
-    "db:studio": "pnpx drizzle-kit studio",
-    "db:generate": "pnpx drizzle-kit generate"
+    "db:push": "npx drizzle-kit push",
+    "db:studio": "npx drizzle-kit studio"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",

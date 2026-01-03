@@ -1,3 +1,4 @@
+// app/plugins/client.ts
 import { createTRPCClient, httpBatchLink } from '@trpc/client'
 import type { AppRouter } from '~~/server/trpc/routers'
 import superjson from 'superjson';
