@@ -50,6 +50,7 @@ export const authRouter = router({
     }))
     .mutation(async ({ input }) => {
       const result = await loginUser(input.username,input.password)
+      return result
       // const user = await db.select()
       //   .from(users)
       //   .where(eq(users.username, input.username))
