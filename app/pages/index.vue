@@ -46,7 +46,7 @@
 
   <div class="border-solid border-8 border-amber-300 rounded-2xl max-w-md mx-auto my-8 p-8 shadow-lg bg-white transition-all duration-300 hover:shadow-xl">
     <!-- 表单标题 -->
-    <h2 class="text-2xl font-bold text-amber-600 mb-6 text-center">用户注册</h2>
+    <h2 class="text-2xl font-bold text-amber-600 mb-6 text-center">用户登录</h2>
     
     <!-- 用户名输入框 -->
     <div class="mb-4">
