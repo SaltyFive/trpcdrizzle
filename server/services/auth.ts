@@ -10,7 +10,7 @@ export async function registerUser(username:string,password:string) {
   })
   if (exist) { throw new Error("用户已存在") }
 
-  const hashedPassword = await bcrypt.hash(password, 10)
+  const hashedPassword = await bcrypt.hash(password, 10) //密码加密，无需在意
 
   const newUser = await db.insert(users).values({
     username: username,
