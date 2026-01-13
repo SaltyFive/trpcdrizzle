@@ -26,7 +26,7 @@
     <!-- 注册按钮 -->
     <button 
       v-if="!registerIsPending" 
-      @click="registerMutation(registerUser)"
+      @click="registerMutation()"
       class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
     >
       注册
@@ -71,7 +71,7 @@
     <!-- 登录按钮 -->
     <button 
       v-if="!loginIsPending" 
-      @click="loginMutation(loginUser)"
+      @click="loginMutation()"
       class="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2"
     >
       登录
@@ -112,8 +112,8 @@
   })
 
   const { mutate:registerMutation,isPending:registerIsPending } = useMutation({
-    mutationFn:async (user:{username:string,password:string}) => {
-      const result = await $trpc.auth.register.mutate(user)
+    mutationFn:async () => {
+      const result = await $trpc.auth.register.mutate(registerUser)
       console.log(result)
       return result
     },
@@ -125,8 +125,8 @@
   })
 
   const { mutate:loginMutation,isPending:loginIsPending } = useMutation({
-    mutationFn:async (user:{username:string,password:string}) => {
-      const result = await $trpc.auth.login.mutate(user)
+    mutationFn:async () => {
+      const result = await $trpc.auth.login.mutate(loginUser)
       console.log(result)
       return result
     },
