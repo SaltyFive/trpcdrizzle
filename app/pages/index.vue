@@ -142,7 +142,6 @@
     queryFn:() => $trpc.auth.getAll.query()
   })
   
-  console.log(usersList.value)
   await suspense()
   
 </script>
