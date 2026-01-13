@@ -88,6 +88,14 @@
       等待中
     </button>
   </div>
+
+  <div v-for="user in usersList":key=user.id
+    class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 ">
+    <div>{{ user.id }}</div>
+    <div>{{ user.username }}</div>
+  </div>
+  <button @click="console.log(usersList)" class="bg-white rounded-lg shadow-sm border border-gray-200 p-4">所有用户打印</button>
+  
 </template>
 
 <script setup lang="ts">
@@ -111,6 +119,7 @@
     },
     onSuccess:() => {
       console.log('成功发送请求至后端')
+      queryClient.invalidateQueries({queryKey:['users']})
     },
     onError:err => console.log('Error:',err)
   })
@@ -123,7 +132,17 @@
     },
     onSuccess:() => {
       console.log('成功发送请求至后端')
+      queryClient.invalidateQueries({queryKey:['users']})
     },
     onError:err => console.log('Error:',err)
   })
+
+  const { data:usersList,suspense} = useQuery({
+    queryKey:['users','list'],
+    queryFn:() => $trpc.auth.getAll.query()
+  })
+  
+  console.log(usersList.value)
+  await suspense()
+  
 </script>
