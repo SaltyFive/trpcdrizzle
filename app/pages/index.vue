@@ -137,11 +137,11 @@
     onError:err => console.log('Error:',err)
   })
 
-  const { data:usersList,suspense} = useQuery({
+  const { data:usersList,suspense:userQuerySuspense} = useQuery({
     queryKey:['users','list'],
     queryFn:() => $trpc.auth.getAll.query()
   })
   
-  await suspense()
+  await userQuerySuspense()
   
 </script>
