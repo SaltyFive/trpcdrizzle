@@ -6,7 +6,7 @@ import { db } from '../../db'
 import { users } from '../../db/schema'
 import { eq } from 'drizzle-orm'
 import bcrypt from 'bcryptjs'
-import { getAllUsers, loginUser, registerUser } from '~~/server/services/auth'
+import { getAllUsers, loginUser, registerUser,modifyUser } from '~~/server/services/auth'
 
 export const authRouter = router({
   register: publicProcedure
@@ -77,8 +77,14 @@ export const authRouter = router({
       // }
     }),
 
-    getAll: publicProcedure
+  getAll: publicProcedure
     .query(async () => {
       return await getAllUsers()
+    }),
+
+  modifyUser: publicProcedure
+    .input(z.object({}))
+    .mutation(async ({ input }) => {
+
     })
 })

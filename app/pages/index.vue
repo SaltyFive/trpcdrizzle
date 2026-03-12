@@ -138,7 +138,7 @@
   })
 
   const { data:usersList,suspense:userQuerySuspense} = useQuery({
-    queryKey:['users','list'],
+    queryKey:['users'],
     queryFn:() => $trpc.auth.getAll.query()
   })
   

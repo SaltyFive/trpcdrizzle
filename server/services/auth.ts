@@ -50,3 +50,7 @@ export async function loginUser(username:string,password:string) {
 export async function getAllUsers() {
   return await db.query.users.findMany()
 }
+
+export async function modifyUser() {
+  
+}
